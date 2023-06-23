@@ -36,6 +36,7 @@ int main()
                 c1++;
             }
         }
+        int c3 = c1, c4=c2;
         cout<<q1<<" "<<q2<<" c1"<<" " <<c2<<endl;
         for(int i=0; i<q; i++)
         {
@@ -44,12 +45,28 @@ int main()
             if(a==1)
             {
                 q1 = q1+ c1*x;
+                 cout<<q1+q2<<endl;
+
+                if(x%2!=0)
+                {
+                    c2 +=c3;
+                    c1=0;
+                }
             }
             else
             {
                 q2 = q2+ c2*x;
+                 cout<<q1+q2<<endl;
+
+               if(x%2!=0)
+               {
+                 c1 +=c4;
+
+
+                 c2=0;
+
+                }
             }
-            cout<<q1+q2<<endl;
 
 
         }
