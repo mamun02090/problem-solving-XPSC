@@ -17,36 +17,32 @@ int main()
     {
         int n, k;
         cin>>n>>k;
-        multimap<long long, int> mp;
-        for(int i=0; i<n; i++)
+       map< long long, int> firstIndex;
+       map< long long, int> lastIndex;
+        for(int i=1; i<=n; i++)
         {
             long long a;
             cin>>a;
-            mp.insert({a, i});
+            if(firstIndex[a]){
+
+            }else{
+                firstIndex[a]=i;
+            }
+            lastIndex[a] = i;
         }
+
         for(int i=0; i<k; i++)
         {
-            int a,b;
+            long long a,b;
             cin>>a>>b;
-            auto it = mp.find(a);
-            auto tmp = it;
-            int x=0;
-            it++;
+            auto it = firstIndex.find(a);
+            auto it2 = lastIndex.find(b);
 
-            while(it!=mp.end())
-            {
-                if(it->first==b)
-                {
-                    x = it->second;
-                    break;
-                }
-                it++;
-            }
-            cout<<x<<endl;
-            if(tmp->second<x)
+            if(it!=firstIndex.end() && it2!=lastIndex.end() && it->second<it2->second)
                 cout<<"YES"<<endl;
             else cout<<"NO"<<endl;
         }
+
     }
     return 0;
 }
