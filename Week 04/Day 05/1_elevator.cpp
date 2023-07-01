@@ -15,7 +15,7 @@ int main()
         int a, b, c;
         cin>>a>>b>>c;
         int timeA = a-1;
-        int timeB = 0;
+        long long timeB = 0;
         if(b>c)
         {
             timeB = b-1;
