@@ -24,10 +24,9 @@ int main()
         int ans = 0;
         int index = 0;
         stack<int> st;
-
+        st.push(v[0]);
         for (int i = 1; i < n; i++)
         {
-            st.push(v[i]);
             if (v[i] < v[i - 1] && i < n - 1 && v[i] > v[i + 1])
             {
             }
@@ -35,21 +34,16 @@ int main()
             {
 
                 if (v[i] >= st.top())
-                {
                     ans += i - index - 1;
-                }
                 else
-                {
                     ans += i - index;
-                    st.pop();
-                    st.push(v[i]);
-                }
+                st.push(v[i]);
                 // cout << index << " " << i << " " << v[i] << " " << ans << endl;
 
                 index = i;
             }
         }
-        cout << ans + st.size() << endl;
+        cout << ans << endl;
     }
 
     return 0;
