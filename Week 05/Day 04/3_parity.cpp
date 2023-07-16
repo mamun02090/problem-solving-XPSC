@@ -40,7 +40,8 @@ int main()
                 }
                 else
                 {
-                    q.push(div);
+                    if ()
+                        q.push(div);
                     n -= div;
                     k--;
                 }
