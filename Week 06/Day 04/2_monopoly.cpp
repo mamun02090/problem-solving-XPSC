@@ -11,9 +11,15 @@ int main()
     cin >> T;
     while (T--)
     {
-        int n, v;
-        cin >> n >> v;
-        if (n <= v * 2)
+        int p, q, r, s;
+        cin >> p >> q >> r >> s;
+
+        int sumExA = q + r + s;
+        int sumExB = p + r + s;
+        int sumExC = p + q + s;
+        int sumExD = p + r + q;
+
+        if (p > sumExA || q > sumExB || r > sumExC || s > sumExD)
         {
             cout << "Yes" << endl;
         }

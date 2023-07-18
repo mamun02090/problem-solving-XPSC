@@ -11,14 +11,12 @@ int main()
     cin >> T;
     while (T--)
     {
-        int n, v;
-        cin >> n >> v;
-        if (n <= v * 2)
-        {
-            cout << "Yes" << endl;
-        }
+        int a;
+        cin >> a;
+        if (a <= 10)
+            cout << "YES" << endl;
         else
-            cout << "No" << endl;
+            cout << "NO" << endl;
     }
 
     return 0;
