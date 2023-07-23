@@ -18,12 +18,17 @@ int main()
         {
             cin >> arr[i];
         }
-        set<int> st;
+        multimap<int, int> st;
         for (int i = 1; i < n; i++)
         {
-            st.insert(abs(arr[i] - arr[i - 1]));
+            st.insert(abs(arr[i] - arr[i - 1]), );
         }
         auto it = st.begin();
+        int ans = *it;
+        it++;
+        if (it != st.end())
+        {
+        }
         cout << *it << endl;
     }
 
