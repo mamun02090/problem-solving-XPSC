@@ -1,57 +1,49 @@
-#include <iostream>
+#include <bits/stdc++.h>
+#include <map>
+
 using namespace std;
 
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int T;
+    cin >> T;
+    while (T--)
     {
-        int n, k = 1;
+        int n;
         cin >> n;
-        string s, p;
-        p = "";
-        cin >> s;
-        if (n == 1)
-        {
-            cout << s << endl;
-            continue;
-        }
-
+        string str;
+        cin >> str;
+        string ans = "";
+        int cnt = 1;
         for (int i = 0; i < n - 1; i++)
         {
-            if (s[i] == s[i + 1])
+
+            if (str[i] == str[i + 1])
             {
-                k++;
-                if (i == n - 2)
-                {
-                    if (k % 2 == 1)
-                        p += s[i];
-                    else
-                    {
-                        p += s[i];
-                        p += s[i];
-                    }
-                }
+                cnt++;
+                continue;
             }
             else
             {
-                if (k % 2 == 1)
-                    p += s[i];
+                ans += str[i];
+                if (cnt % 2 == 0)
+                {
+
+                    ans += str[i];
+                    ans += str[i];
+                }
                 else
                 {
-                    p += s[i];
-                    p += s[i];
+                    ans += str[i];
                 }
-                if (i == n - 2)
-                {
-                    p += s[n - 1];
-                }
-                k = 1;
+                cnt = 1;
             }
         }
-        cout << p << endl;
+        ans += str[n - 1];
+        cout << ans << endl;
     }
-    // your code goes here
+
     return 0;
 }
